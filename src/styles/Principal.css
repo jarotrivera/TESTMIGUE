@@ -1,0 +1,309 @@
+/* Estilo general de las tarjetas Hover */
+.card {
+  position: relative;
+  width: 220px;
+  height: 320px;
+  background: rgb(209, 72, 122);
+  display: flex;
+  flex-direction: column; /* Coloca los elementos en columna */
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+  font-weight: bold;
+  border-radius: 15px;
+  cursor: pointer;
+  overflow: hidden; /* Asegura que no se salga del contenedor */
+  color: white;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05); /* Efecto de zoom */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra */
+}
+
+/* Ícono dentro de la tarjeta */
+.card-icon {
+  font-size: 50px; /* Tamaño del ícono */
+  margin-bottom: 15px; /* Espacio entre ícono y texto */
+  color: white; /* Color del ícono */
+  transition: opacity  0.3s ease;
+}
+
+.card:hover .card-icon {
+  opacity: 0; /* Ocultar ícono al pasar el mouse */
+  transition: opacity 0.3s ease; /* Asegura la transición suave */
+}
+
+/* Texto principal (normal) */
+.card::before {
+  position: absolute;
+  content: attr(data-title); /* Toma el texto de data-title */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 70%; /* Mueve el texto hacia abajo */
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centra completamente el texto */
+  font-size: 20px;
+  font-weight: bold;
+  transition: opacity 0.3s ease;
+  opacity: 1; /* Se muestra inicialmente */
+  width: 100%; /* Asegura que ocupe todo el espacio */
+  height: 100%; /* Asegura que ocupe todo el espacio */
+  text-align: center;
+  padding: 10px; /* Espaciado interno para mejorar visibilidad */
+  box-sizing: border-box;
+}
+
+/* Texto explicativo en el hover */
+.card::after {
+  position: absolute;
+  content: attr(data-hover-text); /* Toma el texto de data-hover-text */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centra completamente el texto */
+  font-size: 16px;
+  font-weight: normal;
+  text-align: center;
+  opacity: 0; /* Oculto inicialmente */
+  transition: opacity 0.3s ease;
+  width: 100%; /* Asegura que ocupe todo el espacio */
+  height: 100%; /* Asegura que ocupe todo el espacio */
+  padding: 10px; /* Espaciado interno para mejorar visibilidad */
+  box-sizing: border-box;
+}
+
+/* Al pasar el mouse, cambiar el texto */
+.card:hover::before {
+  opacity: 0; /* Oculta el título principal */
+}
+
+.card:hover::after {
+  opacity: 1; /* Muestra el texto explicativo */
+}
+.card:hover .icon {
+  opacity: 0; /* Cambia la opacidad a 0 */
+}
+
+/* Tarjetas 3D */
+.three-d-card {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  perspective: 1000px;
+}
+
+.card-wrapper {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+}
+
+.three-d-card:hover .card-wrapper {
+  transform: rotateY(180deg);
+}
+
+.card-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #3498db;
+  border-radius: 15px;
+  background-color: #fff;
+}
+
+.card-face.front {
+  transform: rotateY(0deg);
+}
+
+.card-face.back {
+  transform: rotateY(180deg);
+}
+
+.card-content {
+  text-align: center;
+  color: #333;
+}
+
+.card-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.card-description {
+  font-size: 16px;
+}
+
+/* Tarjetas 3D */
+.three-d-card {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  perspective: 1000px;
+}
+
+.card-wrapper {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+}
+
+.three-d-card:hover .card-wrapper {
+  transform: rotateY(180deg);
+}
+
+.card-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #3498db;
+  border-radius: 15px;
+  background-color: #fff;
+}
+
+.card-face.front {
+  transform: rotateY(0deg);
+}
+
+.card-face.back {
+  transform: rotateY(180deg);
+}
+
+.card-content {
+  text-align: center;
+  color: #333;
+}
+
+.card-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.card-description {
+  font-size: 16px;
+}
+
+/* From Uiverse.io by lucifer4330k */ 
+.brutalist-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  width: 169px;
+  height: 60px;
+  background-color: #855BFF;
+  color: #fff;
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  border: 3px solid #fff;
+  outline: 3px solid #4a3a79;
+  box-shadow: 6px 6px 0 #31306a;
+  transition: all 0.1s ease-out;
+  padding: 0 15px;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+}
+
+.brutalist-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.8),
+    transparent
+  );
+  z-index: 1;
+  transition: none;
+  /* Initially hide the pseudo-element */
+  opacity: 0;
+}
+
+@keyframes slide {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.brutalist-button:hover::before {
+  /* Show the pseudo-element on hover */
+  opacity: 1;
+  animation: slide 2s infinite;
+}
+
+.brutalist-button:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: 10px 10px 0 #000;
+  background-color: #4a3a79;
+  color: #fff;
+}
+
+@keyframes slide {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.brutalist-button:active {
+  transform: translate(4px, 4px);
+  box-shadow: 0px 0px 0 #31306a;
+  background-color: #fff;
+  color: #000;
+  border-color: #000;
+}
+
+.button-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+  transition: transform 0.2s ease-out;
+  position: relative;
+  z-index: 1;
+}
+
+.brutalist-button:hover .button-text {
+  transform: skew(-5deg);
+}
+
+.brutalist-button:active .button-text {
+  transform: skew(5deg);
+}
+
+.button-text span:first-child {
+  font-size: 11px;
+  text-transform: uppercase;
+}
+
+.button-text span:last-child {
+  font-size: 16px;
+  text-transform: uppercase;
+}

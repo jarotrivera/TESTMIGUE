@@ -1,0 +1,32 @@
+/* Contenedor del encabezado */
+.registro-header {
+    position: fixed; /* Fija el logo en la esquina superior izquierda */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #3B3B3B; /* Fondo blanco para el logo */
+    display: flex;
+    align-items: center;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para destacar el encabezado */
+    z-index: 100; /* Asegúrate de que quede encima de todo */
+    padding-left: 20px;
+}
+
+/* Contenedor del logo */
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+/* Estilo del logo */
+.registro-logo {
+    width: 150px; /* Ajusta el tamaño del logo */
+    height: auto; /* Mantén las proporciones */
+}
+
+/* Ajusta el contenido para que no quede oculto detrás del logo fijo */
+.registro-container {
+    margin-top: 60px; /* Margen igual a la altura del header */
+    margin-bottom: 60px;
+}
